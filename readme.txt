@@ -5,45 +5,24 @@ Dataset: https://github.com/MeioJane/SIXray
     booktitle = {CVPR},
     year = {2019} })
 
-COPY local to cloud:
-gcloud compute scp positive_train.record tensorflow-2-vm:.
-gcloud compute scp --recurse rfcn_resnet101 njuthapr@tensorflow-1-vm:./model/ --zone us-west1-b
-gcloud compute scp --recurse faster_rcnn_resnet101 njuthapr@tensorflow-1-vm:./model/ --zone us-west1-b
-gcloud compute scp --recurse inference_graph njuthapr@tensorflow-1-vm:./trained_rfcn_resnet101/ --zone us-west1-b
-gcloud compute scp cloud_run_infer_.py njuthapr@tensorflow-1-vm:./models/research/object_detection/ --zone us-west1-b
 
 
-gcloud compute scp --recurse positive_test njuthapr@tensorflow-1-vm:./new_dataset/ --zone us-west1-b
-gcloud compute scp --recurse negative_train njuthapr@tensorflow-1-vm:./new_dataset/ --zone us-west1-b
-gcloud compute scp --recurse negative_test njuthapr@tensorflow-1-vm:./new_dataset/ --zone us-west1-b
-gcloud compute scp label_test_train.csv njuthapr@tensorflow-2-vm:. --zone us-west1-b
-gcloud compute scp --recurse negative_img11 njuthapr@tensorflow-1-vm:./new_dataset/ --zone us-west1-b
-gcloud compute scp --recurse negative_img12 njuthapr@tensorflow-1-vm:./new_dataset/ --zone us-west1-b
-gcloud compute scp --recurse negative_img11 njuthapr@tensorflow-2-vm:./new_dataset/ --zone us-west1-b
-gcloud compute scp --recurse negative_img12 njuthapr@tensorflow-2-vm:./new_dataset/ --zone us-west1-b
+COPY from Local to Google Cloud Platform:
+single file:$ gcloud compute scp positive_train.record username@tensorflow-1-vm:. --zone us-west1-b
+folder:     $ gcloud compute scp --recurse rfcn_resnet101 username@tensorflow-1-vm:./model/ --zone us-west1-b
+
+COPY from Google Cloud Platform to Local:
+single file:$ gcloud compute scp username@tensorflow-1-vm:./xray_models/ssd_inceptionv2/model.ckpt-200000 . --zone us-west1-b
+folder:     $ gcloud compute scp --recurse username@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
 
 
-COPY cloud to local:
-gcloud compute scp thenatzzz@tensorflow-2-vm:./xray_models/ssd_inceptionv2/model.ckpt-200000* . --zone us-west1-b
-gcloud compute scp --recurse njuthapr@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
-gcloud compute scp --recurse njuthapr@tensorflow-1-vm:trained_ssd_mobilenet_fpn . --zone us-west1-b
-gcloud compute scp  --recurse njuthapr@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
-
-gcloud compute scp  --recurse njuthapr@tensorflow-2-vm:trained_faster_rcnn_resnet50 . --zone us-west1-b
-gcloud compute scp  njuthapr@tensorflow-1-vm:label_score_rfcn_resnet101.csv . --zone us-west1-b
-
-
-
-thenatzzz@DESKTOP-LJRLU7E MINGW64 /d/Coding/SFU_CA/CMPT-733/groupproject/models/research/object_detection
+Training code: use Tensorflow Object Detection API (model/research/object_detection)
 $ python model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=training/pipeline.config
-python model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=training/pipeline.config
 
-Tensorboard: (https://stackoverflow.com/questions/33836728/view-tensorboard-on-docker-on-google-cloud)
-thenatzzz@tensorflow-2-vm:~/xray_models$ gcloud compute firewall-rules create tensorboard-port --allow tcp:6006
-gcloud compute firewall-rules create tensorboard-port --allow tcp:8008
-thenatzzz@tensorflow-2-vm:~/xray_models$ tensorboard --logdir=test2 --port=6006
-tensorboard --logdir=trained_faster_rcnn_resnet50 --port=8008
-http://35.197.75.253:6006/#images
+Viewing Progress of Training via Tensorboard:
+$ gcloud compute firewall-rules create tensorboard-port --allow tcp:8008
+$ tensorboard --logdir=trained_model --port=8008
+Then look at the progress at http://<external-ip-of-Google-Cloud-VM>:6006
 
 python model_main.py --logtostderr --model_dir=/home/thenatzzz/xray_models/test/ --pipeline_config_path=/home/thenatzzz/xray_models/config_pipeline/pipeline.config
 tensorboard --logdir=training/ex3 --samples_per_plugin=images=30
