@@ -4,6 +4,7 @@
 
 #### Models:
 Download pre-trained models from Model Zoo (https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
+
 Download Config files for each model (https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs)
 
 #### In this project, we will use the following models:
@@ -30,16 +31,14 @@ Download Config files for each model (https://github.com/tensorflow/models/tree/
 single file:
 $ gcloud compute scp positive_train.record username@tensorflow-1-vm:. --zone us-west1-b
 
-folder:     
-$ gcloud compute scp --recurse rfcn_resnet101 username@tensorflow-1-vm:./model/ --zone us-west1-b
+folder: $ gcloud compute scp --recurse rfcn_resnet101 username@tensorflow-1-vm:./model/ --zone us-west1-b
 
 #### COPY from Google Cloud Platform to Local:
 
 single file:
 $ gcloud compute scp username@tensorflow-1-vm:model.ckpt-200000 . --zone us-west1-b
 
-folder:     
-$ gcloud compute scp --recurse username@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
+folder: $ gcloud compute scp --recurse username@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
 
 #### Training code: use Tensorflow Object Detection API (model/research/object_detection)
 
