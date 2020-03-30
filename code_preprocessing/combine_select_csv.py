@@ -22,9 +22,9 @@ def create_csv_label(list_files,df_label,save_path_filename):
 
 def main():
     # Point to where the images are located (image we want to match with label csv)
-    # list_img_path = ['new_dataset/positive_test','new_dataset/negative_test','new_dataset/negative_train']
-    # list_img_path = ['new_dataset/positive_test','new_dataset/negative_test','new_dataset/negative_train','new_dataset/negative_img11']
-    list_img_path = ['new_dataset/positive_test','new_dataset/negative_test','new_dataset/negative_train','new_dataset/negative_img11','new_dataset/negative_img12']
+    # list_img_path = ['dataset/new_dataset/positive_test','new_dataset/negative_test','new_dataset/negative_train']
+    # list_img_path = ['dataset/new_dataset/positive_test','new_dataset/negative_test','new_dataset/negative_train','new_dataset/negative_img11']
+    list_img_path = ['dataset/new_dataset/positive_test','new_dataset/negative_test','new_dataset/negative_train','new_dataset/negative_img11','new_dataset/negative_img12']
 
     list_images = []
     for path in list_img_path:
@@ -34,10 +34,10 @@ def main():
 
     # Combine original label files
     # Note: if we have new csv file, please read csv in. As we need to combine every csv we want into one
-    df_label_train = pd.read_csv('new_dataset/label/train.csv')
-    df_label_test = pd.read_csv('new_dataset/label/test.csv')
-    df_label_neg_img11 = pd.read_csv('new_dataset/negative_img_label11.csv')
-    df_label_neg_img12 = pd.read_csv('new_dataset/negative_img_label12.csv')
+    df_label_train = pd.read_csv('dataset/new_dataset/label/train.csv')
+    df_label_test = pd.read_csv('dataset/new_dataset/label/test.csv')
+    df_label_neg_img11 = pd.read_csv('dataset/new_dataset/negative_img_label11.csv')
+    df_label_neg_img12 = pd.read_csv('dataset/new_dataset/negative_img_label12.csv')
 
     # df_label = pd.concat([df_label_train, df_label_test], ignore_index=True, sort =False)
     df_label = pd.concat([df_label_train, df_label_test,df_label_neg_img11,df_label_neg_img12], ignore_index=True, sort =False)

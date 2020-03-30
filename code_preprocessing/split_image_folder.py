@@ -1,7 +1,15 @@
+
+''' For Image Classification '''
 # positive:  8929 : 7100/1829
 # negative: 52515  : 42000/10515
 # train-test: 80/20 : 49100/12344
 # train-> train/val: 80/20 : 39100/ 10000
+
+''' For Object Detection (Classification+Localization)'''
+# We train only on Positive dataset
+# positive:  8929
+# train-test: 80/20 : 7100/1829
+
 from os import listdir
 from os.path import isfile, join
 from shutil import copyfile

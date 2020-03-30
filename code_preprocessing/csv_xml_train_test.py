@@ -13,8 +13,8 @@ def create_csv_label(list_files,df_label,save_path_filename):
     df_new.to_csv(save_path_filename,index=None)
 
 def main():
-    # path =image_path = os.path.join(os.getcwd(), 'new_dataset/positive_test')
-    path =image_path = os.path.join(os.getcwd(), 'new_dataset/positive_train')
+    # path =image_path = os.path.join(os.getcwd(), 'dataset/new_dataset/positive_test')
+    path =image_path = os.path.join(os.getcwd(), 'dataset/new_dataset/positive_train')
     list_img = get_list_of_files(path)
 
     df_loc_class = pd.read_csv('xray.csv')
