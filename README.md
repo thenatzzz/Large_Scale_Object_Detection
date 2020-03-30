@@ -1,6 +1,6 @@
 # 733-Object Detection on Xray images
-# CMPT-733 Programming for Big Data 2 (Simon Fraser University)
-# Group members:Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
+## CMPT-733 Programming for Big Data 2 (Simon Fraser University)
+### Group members:Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
 
 Models:
 Download pre-trained models from Model Zoo (https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
