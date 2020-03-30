@@ -36,7 +36,7 @@ $ gcloud compute scp --recurse rfcn_resnet101 username@tensorflow-1-vm:./model/ 
 #### COPY from Google Cloud Platform to Local:
 
 single file:
-$ gcloud compute scp username@tensorflow-1-vm:./xray_models/ssd_inceptionv2/model.ckpt-200000 . --zone us-west1-b
+$ gcloud compute scp username@tensorflow-1-vm:model.ckpt-200000 . --zone us-west1-b
 
 folder:     
 $ gcloud compute scp --recurse username@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
