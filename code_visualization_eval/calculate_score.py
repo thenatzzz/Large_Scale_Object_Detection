@@ -1,3 +1,11 @@
+'''Calculate mean Average Precision (Object Detection score) for every ratio of Test dataset
+1: 1,800 Positive samples + 50,000 Negative samples
+2: 1,800 Positive samples + 100,000 Negative samples
+3: 1,800 Positive samples + 150,000 Negative samples
+
+Output: csv file of every model with class scores in every ratio of Test dataset
+'''
+
 import numpy as np
 from os import listdir
 from os.path import isfile, join

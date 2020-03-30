@@ -1,3 +1,5 @@
+'''Visualize images in panels'''
+
 import matplotlib.pyplot as plt
 from PIL import Image
 from matplotlib.pyplot import figure
@@ -6,7 +8,6 @@ import numpy as np
 path = "positive_test"+"\\"
 filenames=[path+'P03320.jpg',path+'P03320.jpg',path+'P03320.jpg',path+'P03320.jpg',\
 path+'P03320.jpg',path+'P03320.jpg',path+'P03320.jpg',path+'P03320.jpg',path+'P03320.jpg']
-
 
 # settings
 h, w = 10, 10        # for raster image

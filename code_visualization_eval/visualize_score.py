@@ -1,3 +1,9 @@
+''' Main Visualization file:
+2 figues:
+1. mean Average Precision curves of different models
+2. mean Average Precision (micro) of different models and different ratio of positive-negative test dataset
+'''
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd

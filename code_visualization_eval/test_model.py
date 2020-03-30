@@ -1,3 +1,6 @@
+'''Visualize Test images with Bounding Boxes with our trained model (inference graph inside trained model folder)
+ (see whether our model can detect anything in images or not)'''
+
 import numpy as np
 import os
 import six.moves.urllib as urllib
@@ -5,7 +8,6 @@ import sys
 import tarfile
 import tensorflow as tf
 import zipfile
-
 from distutils.version import StrictVersion
 from collections import defaultdict
 from io import StringIO
@@ -56,15 +58,7 @@ def run_inference_for_single_image(image, graph,tensor_dict,sess):
 
 
 def main(): #p00458,p00118
-    folder_model= 'incomplete_trained_ssd_mobilenet_v1' # 22.11,26
-    # folder_model= 'trained_ssd_mobilenet_fpn'  # 29.16,29.66
-    folder_model= 'trained_ssd_inceptionv2' # 29.12,30.720
-    # folder_model= 'trained_faster_rcnn_inceptionv2'  #29.99,30.66
-    # folder_model= 'trained_faster_rcnn_resnet50' #37.56,37.688
-    # folder_model= 'trained_ssd_resnet50'   #39.76 ,40.575
-    # folder_model= 'trained_faster_rcnn_resnet101' #51,48.7
     folder_model= 'trained_rfcn_resnet101'  # 51.36,51.89
-
 
     PATH_TO_FROZEN_GRAPH = 'D:/Coding/SFU_CA/CMPT-733/groupproject/report/trained_model/'+folder_model+'/inference_graph/frozen_inference_graph.pb'
 
@@ -81,14 +75,12 @@ def main(): #p00458,p00118
             tf.import_graph_def(od_graph_def, name='')
 
     image= 'P00118.jpg'
-    image= 'P00458.jpg'
     abs_img_path = 'D:/Coding/SFU_CA/CMPT-733/groupproject/dataset/new_dataset/positive_test/'
     image_path =  abs_img_path + image
     try:
         with detection_graph.as_default():
             with tf.Session() as sess:
                 image_np = np.array(Image.open(image_path))
-
                 # Get handles to input and output tensors
                 ops = tf.get_default_graph().get_operations()
                 all_tensor_names = {output.name for op in ops for output in op.outputs}

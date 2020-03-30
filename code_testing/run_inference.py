@@ -9,6 +9,10 @@ Command to create "inference_graph" from our trained model(ckpt file)
               --output_directory training/faster_rcnn_inceptionv2/inference_graph
 Usage:
   Move this file into Tensorflow Object Detection APi folder (/model/research/object_detection)
+
+
+Output: csv file consists of Object Detection score + True label (for each class) for every image we evaluate
+       This file will be used for visualization.
 """
 
 import numpy as np
@@ -203,10 +207,6 @@ def main():
 
     except Exception as e:
         print(e)
-    img = Image.fromarray(image_np, 'RGB')
-    ''' To show one image '''
-    # img.show()
-
 
 if __name__ == '__main__':
     main()
