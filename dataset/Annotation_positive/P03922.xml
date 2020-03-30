@@ -1,0 +1,56 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P03922.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>954</width>
+		<height>535</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>688.529</xmin>
+			<ymin>435.811</ymin>
+			<xmax>849.751</xmax>
+			<ymax>476.107</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>663.072</xmin>
+			<ymin>278.969</ymin>
+			<xmax>809.748</xmax>
+			<ymax>320.504</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Wrench</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>667.921</xmin>
+			<ymin>432.092</ymin>
+			<xmax>852.175</xmax>
+			<ymax>482.306</ymax>
+		</bndbox>
+	</object>
+</annotation>

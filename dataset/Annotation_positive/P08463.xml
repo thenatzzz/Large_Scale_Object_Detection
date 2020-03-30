@@ -1,0 +1,44 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P08463.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>666</width>
+		<height>577</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>591.53</xmin>
+			<ymin>227.323</ymin>
+			<xmax>643.151</xmax>
+			<ymax>338.311</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>496.75</xmin>
+			<ymin>286.16</ymin>
+			<xmax>657.537</xmax>
+			<ymax>412.525</ymax>
+		</bndbox>
+	</object>
+</annotation>

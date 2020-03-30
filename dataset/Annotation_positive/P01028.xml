@@ -1,0 +1,44 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P01028.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>586</width>
+		<height>586</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Gun</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>294.861</xmin>
+			<ymin>380.255</ymin>
+			<xmax>483.99</xmax>
+			<ymax>496.368</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>207.743</xmin>
+			<ymin>168.399</ymin>
+			<xmax>469.842</xmax>
+			<ymax>296.735</ymax>
+		</bndbox>
+	</object>
+</annotation>

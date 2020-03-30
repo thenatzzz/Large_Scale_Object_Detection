@@ -1,0 +1,56 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P03348.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>471</width>
+		<height>460</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Knife</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>129.869</xmin>
+			<ymin>168.969</ymin>
+			<xmax>369.858</xmax>
+			<ymax>306.489</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Wrench</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>50.272</xmin>
+			<ymin>270.243</ymin>
+			<xmax>266.321</xmax>
+			<ymax>410.962</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Wrench</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>59.848</xmin>
+			<ymin>272.375</ymin>
+			<xmax>326.169</xmax>
+			<ymax>318.216</ymax>
+		</bndbox>
+	</object>
+</annotation>

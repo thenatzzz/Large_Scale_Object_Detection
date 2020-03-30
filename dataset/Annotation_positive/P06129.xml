@@ -1,0 +1,44 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P06129.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>475</width>
+		<height>588</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>351.271</xmin>
+			<ymin>205.766</ymin>
+			<xmax>413.437</xmax>
+			<ymax>362.475</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Knife</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>223.316</xmin>
+			<ymin>161.479</ymin>
+			<xmax>385.07</xmax>
+			<ymax>376.102</ymax>
+		</bndbox>
+	</object>
+</annotation>

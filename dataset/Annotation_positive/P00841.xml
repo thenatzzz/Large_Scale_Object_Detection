@@ -1,0 +1,56 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P00841.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>549</width>
+		<height>570</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Knife</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>126.263</xmin>
+			<ymin>188.239</ymin>
+			<xmax>260.199</xmax>
+			<ymax>534.994</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Wrench</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>39.065</xmin>
+			<ymin>225.886</ymin>
+			<xmax>117.194</xmax>
+			<ymax>424.032</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>57.9</xmin>
+			<ymin>158.517</ymin>
+			<xmax>262.99</xmax>
+			<ymax>202.769</ymax>
+		</bndbox>
+	</object>
+</annotation>

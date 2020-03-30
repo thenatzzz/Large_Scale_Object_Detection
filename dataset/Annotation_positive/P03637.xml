@@ -1,0 +1,56 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P03637.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>936</width>
+		<height>1024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Gun</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>403.182</xmin>
+			<ymin>490.049</ymin>
+			<xmax>652.94</xmax>
+			<ymax>659.727</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Gun</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>223.593</xmin>
+			<ymin>567.175</ymin>
+			<xmax>406.75</xmax>
+			<ymax>753.465</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Knife</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>292.574</xmin>
+			<ymin>449.706</ymin>
+			<xmax>743.329</xmax>
+			<ymax>682.271</ymax>
+		</bndbox>
+	</object>
+</annotation>

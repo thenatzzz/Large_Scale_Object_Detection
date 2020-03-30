@@ -1,0 +1,56 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P07114.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>424</width>
+		<height>623</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Scissors</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>176.173</xmin>
+			<ymin>150.155</ymin>
+			<xmax>241.362</xmax>
+			<ymax>241.115</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Scissors</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>158.933</xmin>
+			<ymin>151.599</ymin>
+			<xmax>204.188</xmax>
+			<ymax>223.789</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Scissors</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>170.785</xmin>
+			<ymin>410.761</ymin>
+			<xmax>217.118</xmax>
+			<ymax>478.62</ymax>
+		</bndbox>
+	</object>
+</annotation>

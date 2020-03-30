@@ -1,0 +1,32 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P04446.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>525</width>
+		<height>827</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>255.496</xmin>
+			<ymin>539.514</ymin>
+			<xmax>372.903</xmax>
+			<ymax>603.72</ymax>
+		</bndbox>
+	</object>
+</annotation>

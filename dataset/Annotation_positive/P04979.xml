@@ -1,0 +1,46 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P04979.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>1195</width>
+		<height>707</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>350.756</xmin>
+			<ymin>145.005</ymin>
+			<xmax>435.788</xmax>
+			<ymax>260.517</ymax>
+		</bndbox>
+	</object>
+	<object>
+	</object>
+	<object>
+		<name>Scissors</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>384.161</xmin>
+			<ymin>288.371</ymin>
+			<xmax>438.825</xmax>
+			<ymax>359.644</ymax>
+		</bndbox>
+	</object>
+</annotation>

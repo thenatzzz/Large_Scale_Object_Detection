@@ -1,0 +1,46 @@
+<annotation>
+	<folder>X_ray</folder>
+	<filename>P07458.jpg</filename>
+	<source>
+		<database>The X_ray Database</database>
+		<annotation>The X_ray Database</annotation>
+		<image>X_ray</image>
+		<flickrid>0</flickrid>
+	</source>
+	<owner>
+		<flickrid>miaocaijing16@mails.ucas.ac.ac</flickrid>
+		<name>MeioJane</name>
+	</owner>
+	<size>
+		<width>344</width>
+		<height>463</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+	</object>
+	<object>
+		<name>Pliers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>107.527</xmin>
+			<ymin>226.94</ymin>
+			<xmax>284.117</xmax>
+			<ymax>292.393</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Wrench</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>36.28</xmin>
+			<ymin>228.549</ymin>
+			<xmax>274.501</xmax>
+			<ymax>375.55</ymax>
+		</bndbox>
+	</object>
+</annotation>
