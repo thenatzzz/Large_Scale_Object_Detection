@@ -1,16 +1,19 @@
+'''Getting image labels from original dataset (which contains all label train/test csvfile in folder (10,100,1000)) '''
+
 from os import listdir
 from os.path import isfile, join
 import pandas as pd
 from tqdm import tqdm
 
-'''Getting image labels from original dataset (which contains all label train/test csvfile in folder (10,100,1000)) '''
 
 
 def get_list_of_files(path):
     list_files = [f for f in listdir(path) if isfile(join(path, f))]
     return list_files
+
 def strip_file_output(elem):
     return elem.strip('.jpg')
+
 def create_csv_label(list_files,df_label,save_path_filename):
     new_list_files = [strip_file_output(s) for s in list_files]
 

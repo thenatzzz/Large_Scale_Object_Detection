@@ -1,3 +1,16 @@
+"""
+Need the Inference graph from trained model folder in order for us to run evaluation for Test images
+
+Command to create "inference_graph" from our trained model(ckpt file)
+    Go to Tensorflow Object Detection API (/models/research/object_detection)
+    $ python export_inference_graph.py --input_type image_tensor
+              --pipeline_config_path training/pipeline.config  (config file from model folder downloaded from Tf model zoo)
+              --trained_checkpoint_prefix training/faster_rcnn_inceptionv2/model.ckpt-116268
+              --output_directory training/faster_rcnn_inceptionv2/inference_graph
+Usage:
+  Move this file into Tensorflow Object Detection APi folder (/model/research/object_detection)
+"""
+
 import numpy as np
 import os
 import six.moves.urllib as urllib
@@ -83,46 +96,11 @@ def get_list_class_label(df_label,list_img_name):
     return df_new.values.tolist() , df_new
 
 def main():
-    '''
-    Command to create "inference_graph" from our trained model(ckpt file)
-    (tf_gpu15)
-    /d/Coding/SFU_CA/CMPT-733/groupproject/models/research/object_detection
-    $ python export_inference_graph.py --input_type image_tensor
-              --pipeline_config_path training/pipeline.config
-              --trained_checkpoint_prefix training/faster_rcnn_inceptionv2/model.ckpt-116268
-              --output_directory training/faster_rcnn_inceptionv2/inference_graph
-
-
-    faster_rcnn_inceptionv2:
-    python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/pipeline.config --trained_checkpoint_prefix training/faster_rcnn_inceptionv2/model.ckpt-200000 --output_directory training/faster_rcnn_inceptionv2/inference_graph
-
-    faster_rcnn_resnet50:
-    # FAIL !!!
-    python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_resnet50/pipeline.config --trained_checkpoint_prefix training/faster_rcnn_resnet50/trained/model.ckpt-558 --output_directory training/faster_rcnn_resnet50/trained/inference_graph
-    python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/b/pipeline.config --trained_checkpoint_prefix training/b/model.ckpt-82296 --output_directory training/b/inference_graph
-
-    rfcn_resnet101:
-    python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/trained_rfcn_resnet101/pipeline.config --trained_checkpoint_prefix training/trained_rfcn_resnet101/model.ckpt-200000 --output_directory training/trained_rfcn_resnet101/inference_graph
-
-    ssd_inceptionv2:
-    python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/ssd_inceptionv2/pipeline.config --trained_checkpoint_prefix training/ssd_inceptionv2/model.ckpt-200000 --output_directory training/ssd_inceptionv2/inference_graph
-
-    ssd_resnet50:
-    python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/ssd_resnet50/model_ssd_resnet50/pipeline.config --trained_checkpoint_prefix training/ssd_resnet50/model_ssd_resnet50/model.ckpt-881618 --output_directory training/ssd_resnet50/model_ssd_resnet50/inference_graph
-
-    ssd_mobilenetv1_fpn:
-    python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/trained_ssd_mobilenet_fpn/pipeline.config --trained_checkpoint_prefix training/trained_ssd_mobilenet_fpn/model.ckpt-80470 --output_directory training/trained_ssd_mobilenet_fpn/inference_graph
-
-    '''
-    # PATH_TO_FROZEN_GRAPH = 'training/faster_rcnn_inceptionv2/inference_graph_116268/frozen_inference_graph.pb'
-
     PATH_TO_FROZEN_GRAPH = 'training/trained_faster_rcnn_inceptionv2/inference_graph/frozen_inference_graph.pb'
     PATH_TO_FROZEN_GRAPH = 'training/trained_ssd_inceptionv2/inference_graph/frozen_inference_graph.pb'
     PATH_TO_FROZEN_GRAPH = 'training/trained_ssd_resnet50/model_ssd_resnet50/inference_graph/frozen_inference_graph.pb'
     PATH_TO_FROZEN_GRAPH = 'training/trained_ssd_mobilenet_fpn/inference_graph/frozen_inference_graph.pb'
     PATH_TO_FROZEN_GRAPH = 'training/trained_rfcn_resnet101/inference_graph/frozen_inference_graph.pb'
-
-
 
     # List of the strings that is used to add correct label for each box.
     PATH_TO_LABELS = os.path.join('training', 'labelmap.pbtxt')
@@ -136,9 +114,6 @@ def main():
             tf.import_graph_def(od_graph_def, name='')
 
     category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
-
-    # image_path = "D:/Coding/SFU_CA/CMPT-733/groupproject/dataset/new_dataset/positive_test/P00066.jpg"
-    # TEST_IMAGE_PATHS = [image_path2,image_path3]
 
     abs_img_path = 'D:/Coding/SFU_CA/CMPT-733/groupproject/dataset/new_dataset/'
 
@@ -194,23 +169,7 @@ def main():
                     # Actual detection.
                     output_dict = run_inference_for_single_image(image_np, detection_graph,tensor_dict,sess)
 
-                    '''For Visualization (do not delete)'''
-                    '''Visualization of the results of a detection.'''
-                    # vis_util.visualize_boxes_and_labels_on_image_array(
-                    #                             image_np,
-                    #                             output_dict['detection_boxes'],
-                    #                             output_dict['detection_classes'],
-                    #                             output_dict['detection_scores'],
-                    #                             category_index,
-                    #                             instance_masks=output_dict.get('detection_masks'),
-                    #                             use_normalized_coordinates=True,
-                    #                             line_thickness=8)
-
-
-                    # print(output_dict['detection_scores'])
-                    # print(output_dict['detection_classes'])
                     pair_class_score = list(zip(output_dict['detection_classes'], output_dict['detection_scores']))
-                    # print(pair_class_score)
                     score_per_class = get_score_per_class(df_label,pair_class_score)
                     print("true class: ",true_class_label)
                     print("score :",score_per_class)
@@ -218,11 +177,8 @@ def main():
                     list_true_class.append(true_class_label)
                     list_score.append(score_per_class)
                     big_list.append([image_name]+score_per_class+true_class_label)
-                    # avg_precision_score= calculate_average_precision_score(true_class_label,score_per_class)
 
                     print("Image name: ",image_name)
-                    # print(big_list)
-
 
                     i += 1
                     if i == 100000:
@@ -232,10 +188,7 @@ def main():
                 col_true_label = [s+'_label' for s in col_score]
                 new_col = ['filename']+col_score+col_true_label
                 df_score = pd.DataFrame.from_records(big_list,columns=new_col)
-                # ssd inceptionv2
                 df_score.to_csv('D:/Coding/SFU_CA/CMPT-733/groupproject/dataset/label_score.csv',index=None)
-                # faster ssd resnet50
-                # df_score.to_csv('D:/Coding/SFU_CA/CMPT-733/groupproject/dataset/label_score_neg11_ssd_resnet50.csv',index=None)
 
                 precision = dict()
                 recall = dict()

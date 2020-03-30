@@ -1,9 +1,10 @@
+'''Combine all label csv files according to selected folders of images into final csv for training/testing '''
+
 import os
 import glob
 import pandas as pd
 from os import listdir
 from os.path import isfile, join
-'''Combine all label csv files according to selected folders of images into final csv for training/testing '''
 
 def get_list_of_files(path):
     list_files = [f for f in listdir(path) if isfile(join(path, f))]
