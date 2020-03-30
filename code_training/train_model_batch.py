@@ -1,3 +1,12 @@
+'''NOTE !!! this is the training code for classification tasks.
+However, after we train our Xray dataset with this code, the accuracy is very.
+Therefore, we decide to use Object Detection model instead.
+
+We use Tensorflow Object Detection API instead with Google Cloud Platform.
+This file can be ignored!.  '''
+
+
+
 from keras.models import Sequential
 from keras_preprocessing.image import ImageDataGenerator
 from keras.layers import Dense, Activation, Flatten, Dropout, BatchNormalization
