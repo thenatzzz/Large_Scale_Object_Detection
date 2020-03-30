@@ -1,6 +1,7 @@
 """
+Turning Xray(xml object detection) csv file + Image data into Tensorflow Record (tf_records) for training purpose
+
 Usage:
-  # From tensorflow/models/
   # Create train data:
   python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record
   # Create test data:

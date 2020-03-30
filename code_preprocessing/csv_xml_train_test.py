@@ -4,6 +4,9 @@ import pandas as pd
 from os import listdir
 from os.path import isfile, join
 
+''' Splitting Xray csv file(xml object position) into Xray csv train/test file '''
+
+
 def get_list_of_files(path):
     list_files = [f for f in listdir(path) if isfile(join(path, f))]
     return list_files

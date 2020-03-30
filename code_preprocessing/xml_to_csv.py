@@ -3,6 +3,7 @@ import glob
 import pandas as pd
 import xml.etree.ElementTree as ET
 
+'''Turning xml files into csv file based on important field names '''
 
 def xml_to_csv(path):
     xml_list = []
