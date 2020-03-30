@@ -3,11 +3,12 @@
 ### Group members:Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
 
 #### Requirements:
-1. Tensorflow 1.15 (Tensorflow 2.0 does not work properly with Object Detection API)
-2. NumPy version lower than 1.18 as it will have problem with COCO API
-3. COCO API (for evaluation metric and all of our models used are pre-trained on COCO Dataset)
-4. Google Cloud Platform for training models and evaluating results with new images (you can use Compute Engineer VM or Google Deeplearning VM)
-5. Some other basic library for Data Science like scikin-learn, pandas, numpy, matplotlib, ..
+1. Tensorflow Object Detection API (https://github.com/tensorflow/models/tree/master/research/object_detection)
+2. Tensorflow 1.15 (Tensorflow 2.0 does not work properly with Object Detection API)
+3. NumPy version lower than 1.18 as it will have problem with COCO API
+4. COCO API (for evaluation metric and all of our models used are pre-trained on COCO Dataset)
+5. Google Cloud Platform for training models and evaluating results with new images (you can use Compute Engineer VM or Google Deeplearning VM)
+6. Some other basic library for Data Science like scikin-learn, pandas, numpy, matplotlib, ..
 
 #### Models:
 Download pre-trained models from Model Zoo (https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
