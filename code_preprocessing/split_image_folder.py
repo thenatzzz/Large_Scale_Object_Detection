@@ -1,4 +1,7 @@
 
+'''Splitting images from train/test into positive train/test and negative train/test '''
+
+
 ''' For Image Classification '''
 # positive:  8929 : 7100/1829
 # negative: 52515  : 42000/10515

@@ -3,6 +3,9 @@ from os.path import isfile, join
 import pandas as pd
 from tqdm import tqdm
 
+'''Getting image labels from original dataset (which contains all label train/test csvfile in folder (10,100,1000)) '''
+
+
 def get_list_of_files(path):
     list_files = [f for f in listdir(path) if isfile(join(path, f))]
     return list_files
@@ -19,6 +22,7 @@ WHICH_FILE = 'test'
 # WHICH_FILE = 'train'
 
 def main():
+    ''' ImageSet contains the filename and label classes of all data '''
     list_folder = ['10','100','1000']
     path_label = 'dataset/ImageSet'
 
