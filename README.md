@@ -51,7 +51,7 @@ $ gcloud compute firewall-rules create tensorboard-port --allow tcp:8008
 
 $ tensorboard --logdir=trained_model --port=8008
 
-Then look at the progress at http://<external-ip-of-Google-Cloud-VM>:6006
+Then look at the progress at http://[external-ip-of-Google-Cloud-VM]:6006
 
 
 #### For starting Google Cloud VM in order to run Tensorflow Object Detection API
