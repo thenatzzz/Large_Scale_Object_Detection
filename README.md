@@ -15,7 +15,7 @@ Download pre-trained models from Model Zoo (https://github.com/tensorflow/models
 
 Download Config files for each model (https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs)
 
-#### In this project, we will use the following models:
+#### In this project, we are using the following models:
 1. SSD_mobilenet_v1
 2. SSD_mobilenet_v1_fpn
 3. SSD_inception_v2
