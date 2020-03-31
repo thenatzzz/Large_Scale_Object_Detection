@@ -6,8 +6,6 @@
 * The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one. Performance of model is described by mean average precision scores(Object Detection metrics), also including accuracy and recall scores.
 * The program is written in Python.
 
-![alt text](https://csil-git1.cs.surrey.sfu.ca/njuthapr/733-object_detection/-/blob/master/report/main/show_image/P06959.png)
-
 #### Requirements:
 1. Tensorflow Object Detection API (https://github.com/tensorflow/models/tree/master/research/object_detection)
 2. Tensorflow 1.15 (Tensorflow 2.0 does not work properly with Object Detection API)
@@ -33,12 +31,21 @@
 
 #### Dataset:
 * SIXray dataset consists of X-ray images from Beijing subway (https://github.com/MeioJane/SIXray)
-##### Credit:
-* (@INPROCEEDINGS{Miao2019SIXray,
+* Credit: (@INPROCEEDINGS{Miao2019SIXray,
     author = {Miao, Caijing and Xie, Lingxi and Wan, Fang and Su, chi and Liu, Hongye and Jiao, jianbin and Ye, Qixiang },
     title = {SIXray: A Large-scale Security Inspection X-ray Benchmark for Prohibited Item Discovery in Overlapping Images},
     booktitle = {CVPR},
     year = {2019} })
+
+#### Codes and Pipeline:
+* Obtaining Dataset: SIXray dataset contains Positive samples(the images containing interested objects that we want to localize/classify) and Negative samples. (Downloading SIXray from links above)
+* Preprocessing Dataset: We use subset of Positive samples for Training and another subset of Positive samples combining with Negative samples for Testing/Evaluating.
+1.In this project, we do not use the whole SIXray dataset due to limitation on computation issue. Since we are using subset of main dataset, we need to get new labels. This labels are used for Testing/Evaluating of models.
+2.We turn images and location file(.xml) of Positive samples into Tensorflow Record for Training.
+* Training: our training is done by Tensorflow Object Detection API where we can download from link above together with Config files and Pre-trained Models. (we have tried Classification model but it does not work well; therefore, we change to Object Detection model instead.)
+* Testing/Evaluating: We create Inference graph from our trained model and use it to evaluate with another subset of Positive samples and whole set of Negative samples. The performance is measured by precision-recall score and mean Average Precision scores (mAP).
+* Visualization: we compare and plot the performance of our different models.
+
 
 #### COPY from Local to Google Cloud Platform:
 ```
