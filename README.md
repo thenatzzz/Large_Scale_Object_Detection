@@ -2,6 +2,12 @@
 ## CMPT-733 Programming for Big Data 2 (Simon Fraser University)
 ### Group members:Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
 
+#### Object Detection in X-Ray Images
+* The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one.
+
+* The program is written in Python. 
+
+
 #### Requirements:
 1. Tensorflow Object Detection API (https://github.com/tensorflow/models/tree/master/research/object_detection)
 2. Tensorflow 1.15 (Tensorflow 2.0 does not work properly with Object Detection API)
@@ -11,9 +17,9 @@
 6. Some other basic library for Data Science like scikin-learn, pandas, numpy, matplotlib, ..
 
 #### Models:
-Download pre-trained models from Model Zoo (https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
+* Download pre-trained models from Model Zoo (https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
 
-Download Config files for each model (https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs)
+* Download Config files for each model (https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs)
 
 #### In this project, we are using the following models:
 1. SSD_mobilenet_v1
