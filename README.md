@@ -3,7 +3,7 @@
 ### Group members:Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
 
 #### Object Detection in X-Ray Images
-* The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one. Performance of model is described by mean average precision scores(Object Detection metrics), also including accuracy and recall scores. 
+* The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one. Performance of model is described by mean average precision scores(Object Detection metrics), also including accuracy and recall scores.
 
 * The program is written in Python.
 
@@ -32,7 +32,8 @@
 8. Faster_RCNN_inception_v2
 
 
-#### Dataset: https://github.com/MeioJane/SIXray
+#### Dataset:
+* SIXray dataset consists of X-ray images from Beijing subway (https://github.com/MeioJane/SIXray)
 ##### Credit:
 * (@INPROCEEDINGS{Miao2019SIXray,
     author = {Miao, Caijing and Xie, Lingxi and Wan, Fang and Su, chi and Liu, Hongye and Jiao, jianbin and Ye, Qixiang },
