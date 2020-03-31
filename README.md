@@ -3,7 +3,7 @@
 ### Group members:Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
 
 #### Object Detection in X-Ray Images
-* The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one.
+* The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one. Performance of model is described by mean average precision scores(Object Detection metrics), also including accuracy and recall scores. 
 
 * The program is written in Python.
 
