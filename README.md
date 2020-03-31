@@ -41,9 +41,9 @@
 * **Obtaining Dataset**: SIXray dataset contains Positive samples(the images containing interested objects that we want to localize/classify) and Negative samples. (Downloading SIXray from links above)
 * **Preprocessing Dataset**: We use subset of Positive samples for Training and another subset of Positive samples combining with Negative samples for Testing/Evaluating.
 
-1.In this project, we do not use the whole SIXray dataset due to limitation on computation issue. Since we are using subset of main dataset, we need to get new labels. This labels are used for Testing/Evaluating of models.
+1. In this project, we do not use the whole SIXray dataset due to limitation on computation issue. Since we are using subset of main dataset, we need to get new labels. Later, these labels are used for Testing/Evaluating of models.
 
-2.We turn images and location file(.xml) of Positive samples into Tensorflow Record for Training.
+2. We turn image and location file(.xml) of Positive samples into Tensorflow Record for Training.
 
 * **Training**: our training is done by Tensorflow Object Detection API where we can download from link above together with Config files and Pre-trained Models. (we have tried Classification model but it does not work well; therefore, we change to Object Detection model instead.)
 * **Testing/Evaluating**: We create Inference graph from our trained model and use it to evaluate with another subset of Positive samples and whole set of Negative samples. The performance is measured by precision-recall score and mean Average Precision scores (mAP).
