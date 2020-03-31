@@ -34,7 +34,7 @@
 
 #### Dataset: https://github.com/MeioJane/SIXray
 ##### Credit:
-(@INPROCEEDINGS{Miao2019SIXray,
+* (@INPROCEEDINGS{Miao2019SIXray,
     author = {Miao, Caijing and Xie, Lingxi and Wan, Fang and Su, chi and Liu, Hongye and Jiao, jianbin and Ye, Qixiang },
     title = {SIXray: A Large-scale Security Inspection X-ray Benchmark for Prohibited Item Discovery in Overlapping Images},
     booktitle = {CVPR},
@@ -54,13 +54,13 @@
 
 #### Training code: use Tensorflow Object Detection API (model/research/object_detection)
 
-$ python model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=training/pipeline.config
+* $ python model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=training/pipeline.config
 
 #### Viewing Progress of Training via Tensorboard:
 
-$ gcloud compute firewall-rules create tensorboard-port --allow tcp:8008
+* $ gcloud compute firewall-rules create tensorboard-port --allow tcp:8008
 
-$ tensorboard --logdir=trained_model --port=8008
+* $ tensorboard --logdir=trained_model --port=8008
 
 * Then look at the progress at http://[external-ip-of-Google-Cloud-VM]:6006
 
@@ -68,8 +68,8 @@ $ tensorboard --logdir=trained_model --port=8008
 #### For starting Google Cloud VM in order to run Tensorflow Object Detection API
 * Tensorflow Object Detection API (model/research)
 
-$ protoc object_detection/protos/*.proto --python_out=.
+* $ protoc object_detection/protos/*.proto --python_out=.
 
-$ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+* $ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 
-$ python object_detection/builders/model_builder_test.py (testing whether it works or not)
+* $ python object_detection/builders/model_builder_test.py (testing whether it works or not)
