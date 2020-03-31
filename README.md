@@ -5,7 +5,7 @@
 #### Object Detection in X-Ray Images
 * The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one.
 
-* The program is written in Python. 
+* The program is written in Python.
 
 
 #### Requirements:
@@ -42,17 +42,15 @@
 
 #### COPY from Local to Google Cloud Platform:
 
-single file:
-$ gcloud compute scp positive_train.record username@tensorflow-1-vm:. --zone us-west1-b
+* single file: $ gcloud compute scp positive_train.record username@tensorflow-1-vm:. --zone us-west1-b
 
-folder: $ gcloud compute scp --recurse rfcn_resnet101 username@tensorflow-1-vm:./model/ --zone us-west1-b
+* folder: $ gcloud compute scp --recurse rfcn_resnet101 username@tensorflow-1-vm:./model/ --zone us-west1-b
 
 #### COPY from Google Cloud Platform to Local:
 
-single file:
-$ gcloud compute scp username@tensorflow-1-vm:model.ckpt-200000 . --zone us-west1-b
+* single file: $ gcloud compute scp username@tensorflow-1-vm:model.ckpt-200000 . --zone us-west1-b
 
-folder: $ gcloud compute scp --recurse username@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
+* folder: $ gcloud compute scp --recurse username@tensorflow-1-vm:trained_rfcn_resnet101 . --zone us-west1-b
 
 #### Training code: use Tensorflow Object Detection API (model/research/object_detection)
 
@@ -64,11 +62,11 @@ $ gcloud compute firewall-rules create tensorboard-port --allow tcp:8008
 
 $ tensorboard --logdir=trained_model --port=8008
 
-Then look at the progress at http://[external-ip-of-Google-Cloud-VM]:6006
+* Then look at the progress at http://[external-ip-of-Google-Cloud-VM]:6006
 
 
 #### For starting Google Cloud VM in order to run Tensorflow Object Detection API
-Tensorflow Object Detection API (model/research)
+* Tensorflow Object Detection API (model/research)
 
 $ protoc object_detection/protos/*.proto --python_out=.
 
