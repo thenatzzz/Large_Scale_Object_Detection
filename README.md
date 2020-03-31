@@ -5,6 +5,8 @@
 #### Object Detection in X-Ray Images
 * The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one. Performance of model is described by mean average precision scores(Object Detection metrics), also including accuracy and recall scores.
 * The program is written in Python.
+![alt text][logo]
+[logo]: https://csil-git1.cs.surrey.sfu.ca/njuthapr/733-object_detection/-/blob/master/report/main/show_image/incomplete_trained_ssd_mobilenet_v1_P00458.jpg "Logo Title Text 2"
 
 #### Requirements:
 1. Tensorflow Object Detection API (https://github.com/tensorflow/models/tree/master/research/object_detection)
