@@ -45,7 +45,7 @@
 
 2. We turn image and location file(.xml) of Positive samples into Tensorflow Record for Training.
 
-* **Training**: our training is done by Tensorflow Object Detection API where we can download from link above together with Config files and Pre-trained Models. (we have tried Classification model but it does not work well; therefore, we change to Object Detection model instead.)
+* **Training**: our training is done by Tensorflow Object Detection API where we can download and install from the link mentioned above together with Config files and Pre-trained Models. (we have tried Classification model but it does not work well; therefore, we change to Object Detection model instead.)
 * **Testing/Evaluating**: We create Inference graph from our trained model and use it to evaluate with another subset of Positive samples and whole set of Negative samples. The performance is measured by precision-recall score and mean Average Precision scores (mAP).
 * **Visualization**: we compare and plot the performance of our different models.
 
