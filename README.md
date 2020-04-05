@@ -39,9 +39,9 @@
 
 #### Codes and Pipeline:
 * **Obtaining Dataset**: SIXray dataset contains Positive samples(the images containing objects of interest namely prohibited items that we want to localize/classify) and Negative samples (the images containing non-prohibited items) which are later used for evaluating our models. (Downloading SIXray from links above)
-* **Preprocessing Dataset**: We use subset of Positive samples for Training and another subset of Positive samples combining with Negative samples for Testing/Evaluating.
+* **Preprocessing Dataset**: We use a subset of Positive samples for Training and another subset of Positive samples combining with Negative samples for Testing/Evaluating.
 
-1. In this project, we do not use the whole SIXray dataset due to limitation on computation issue. Since we are using subset of main dataset, we need to get new labels. Later, these labels are used for Testing/Evaluating of models.
+1. In this project, we do not use the whole SIXray dataset due to limitations on computation issues. Since we are using a subset of the main dataset, we need to get new labels. Later, these labels are used for Testing/Evaluating of models.
 
 2. We turn image and location file(.xml) of Positive samples into Tensorflow Record for Training.
 
