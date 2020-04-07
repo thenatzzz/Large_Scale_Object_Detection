@@ -79,13 +79,59 @@ def plot_precision_recall_curve():
     plt.savefig('avg_precision_recall.png')
     plt.show()
 
+def plot_precision_recall_curve2(neg_sample):
+    fig, ax = plt.subplots()
+
+    ab_path = 'D:/Coding/SFU_CA/CMPT-733/groupproject/report/score_160k/'
+    list_model_files = get_list_of_files(ab_path)
+    list_model_names = [ strip_file_output(model) for model in list_model_files]
+
+    precision = dict()
+    recall = dict()
+    average_precision = dict()
+
+    plt.clf()
+    plt.figure(figsize=(7,6))
+    count =0
+    for model_name,model_file in zip(list_model_names,list_model_files):
+        df_main = pd.read_csv(ab_path+model_file,index_col=0)
+        df_main = df_main.sort_index(ascending=False)
+
+        df_pos = df_main.iloc[:1829,:]
+        df_neg = df_main.iloc[1829:,:]
+        df_neg =df_neg.sample(n=neg_sample,random_state=1)
+        df_combined = pd.concat([df_pos, df_neg], ignore_index=True, sort =False)
+        print(df_combined)
+
+        y_score = df_combined.iloc[:,:5].values
+        y_test = df_combined.iloc[:,5:].values
+        # Compute micro-average ROC curve and ROC area
+        precision["micro"+'_'+model_name], recall["micro"+'_'+model_name], _ = precision_recall_curve(y_test.ravel(),y_score.ravel())
+        average_precision["micro"+'_'+model_name] = average_precision_score(y_test, y_score,average="micro")
+        plt.plot(recall["micro"+'_'+model_name], precision["micro"+'_'+model_name],color=list_color[count],
+            label='{0} (area= {1:0.2f})'''.format(model_name,average_precision["micro"+'_'+model_name]))
+        count += 1
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('Recall',fontweight='bold')
+    plt.ylabel('Precision',fontweight='bold')
+    # plt.title('Precision-Recall curve (50k Negative samples)',fontweight='bold')
+    # plt.title('Precision-Recall curve (100k Negative samples)',fontweight='bold')
+    plt.title('Precision-Recall curve (150k Negative samples)',fontweight='bold')
+
+    plt.legend(loc="lower left")
+    # plt.savefig('avg_precision_recall_50k.png')
+    # plt.savefig('avg_precision_recall_100k.png')
+    plt.savefig('avg_precision_recall_150k.png')
+    plt.show()
+
 def main():
-    df = pd.read_csv('scores.csv')
+    df = pd.read_csv('D:/Coding/SFU_CA/CMPT-733/groupproject_git/report/main/scores.csv')
     print(df)
     dict_str_idx = {'gun':1,'knife':4,'wrench':7,'pliers':10,'scissors':13,'macro_map':16,'micro_map':19,'weighted_map':22}
 
-    plot_score(dict_str_idx['micro_map'],df)
-    plot_precision_recall_curve()
-
+    # plot_score(dict_str_idx['micro_map'],df)
+    # plot_precision_recall_curve()
+    # plot_precision_recall_curve2(150000)
 if __name__ == '__main__':
     main()
