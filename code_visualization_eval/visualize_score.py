@@ -79,7 +79,7 @@ def plot_precision_recall_curve():
     plt.savefig('avg_precision_recall.png')
     plt.show()
 
-def plot_precision_recall_curve2(neg_sample):
+def plot_precision_recall_curve2(neg_sample=150000):
     fig, ax = plt.subplots()
 
     ab_path = 'D:/Coding/SFU_CA/CMPT-733/groupproject/report/score_160k/'
@@ -102,7 +102,8 @@ def plot_precision_recall_curve2(neg_sample):
         df_neg =df_neg.sample(n=neg_sample,random_state=1)
         df_combined = pd.concat([df_pos, df_neg], ignore_index=True, sort =False)
         print(df_combined)
-
+        # y_score = df_pos.iloc[:,:5].values
+        # y_test = df_pos.iloc[:,5:].values
         y_score = df_combined.iloc[:,:5].values
         y_test = df_combined.iloc[:,5:].values
         # Compute micro-average ROC curve and ROC area
@@ -118,11 +119,15 @@ def plot_precision_recall_curve2(neg_sample):
     # plt.title('Precision-Recall curve (50k Negative samples)',fontweight='bold')
     # plt.title('Precision-Recall curve (100k Negative samples)',fontweight='bold')
     plt.title('Precision-Recall curve (150k Negative samples)',fontweight='bold')
+    # plt.title('Precision-Recall curve (1.8k Positive samples Only)',fontweight='bold')
+
 
     plt.legend(loc="lower left")
     # plt.savefig('avg_precision_recall_50k.png')
     # plt.savefig('avg_precision_recall_100k.png')
     plt.savefig('avg_precision_recall_150k.png')
+    # plt.savefig('avg_precision_recall_pos_only.png')
+
     plt.show()
 
 def main():
@@ -132,6 +137,6 @@ def main():
 
     # plot_score(dict_str_idx['micro_map'],df)
     # plot_precision_recall_curve()
-    # plot_precision_recall_curve2(150000)
+    plot_precision_recall_curve2()
 if __name__ == '__main__':
     main()
