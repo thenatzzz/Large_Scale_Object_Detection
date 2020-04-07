@@ -102,8 +102,10 @@ def plot_precision_recall_curve2(neg_sample=150000):
         df_neg =df_neg.sample(n=neg_sample,random_state=1)
         df_combined = pd.concat([df_pos, df_neg], ignore_index=True, sort =False)
         print(df_combined)
+        
         # y_score = df_pos.iloc[:,:5].values
         # y_test = df_pos.iloc[:,5:].values
+
         y_score = df_combined.iloc[:,:5].values
         y_test = df_combined.iloc[:,5:].values
         # Compute micro-average ROC curve and ROC area
@@ -116,10 +118,10 @@ def plot_precision_recall_curve2(neg_sample=150000):
     plt.ylim([0.0, 1.05])
     plt.xlabel('Recall',fontweight='bold')
     plt.ylabel('Precision',fontweight='bold')
-    # plt.title('Precision-Recall curve (50k Negative samples)',fontweight='bold')
-    # plt.title('Precision-Recall curve (100k Negative samples)',fontweight='bold')
-    plt.title('Precision-Recall curve (150k Negative samples)',fontweight='bold')
-    # plt.title('Precision-Recall curve (1.8k Positive samples Only)',fontweight='bold')
+    # plt.title('Micro Average Precision-Recall (50k Negative samples)',fontweight='bold')
+    # plt.title('Micro Average Precision-Recall (100k Negative samples)',fontweight='bold')
+    plt.title('Micro Average Precision-Recall (150k Negative samples)',fontweight='bold')
+    # plt.title('Micro Average Precision-Recall (1.8k Positive samples)',fontweight='bold')
 
 
     plt.legend(loc="lower left")
