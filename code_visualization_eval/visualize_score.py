@@ -102,7 +102,7 @@ def plot_precision_recall_curve2(neg_sample=150000):
         df_neg =df_neg.sample(n=neg_sample,random_state=1)
         df_combined = pd.concat([df_pos, df_neg], ignore_index=True, sort =False)
         print(df_combined)
-        
+
         # y_score = df_pos.iloc[:,:5].values
         # y_test = df_pos.iloc[:,5:].values
 
@@ -139,6 +139,6 @@ def main():
 
     # plot_score(dict_str_idx['micro_map'],df)
     # plot_precision_recall_curve()
-    plot_precision_recall_curve2()
+    # plot_precision_recall_curve2()
 if __name__ == '__main__':
     main()
