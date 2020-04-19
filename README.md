@@ -14,7 +14,7 @@
 5. Google Cloud Platform for training models and evaluating results with new images (you can use Compute Engineer VM or Google Deeplearning VM)
 6. Some other basic library for Data Science like scikin-learn, pandas, numpy, matplotlib, ..
 
-**the Main code is in Tensorflow Object Detection API**
+**The Main code is in Tensorflow Object Detection API**
 
 #### Models:
 * Download pre-trained models from Model Zoo (https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
