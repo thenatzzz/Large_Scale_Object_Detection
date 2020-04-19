@@ -6,7 +6,11 @@
 * The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one. Performance of the models is described by mean average precision scores(Object Detection metrics), also including accuracy and recall scores.
 * The program is written in Python.
 
-#### Medium post: https://medium.com/sfu-cspmp/object-detection-in-x-ray-images-414a4fb06dff
+#### Medium post:
+https://medium.com/sfu-cspmp/object-detection-in-x-ray-images-414a4fb06dff
+
+#### Video Presentation:
+https://www.youtube.com/watch?v=XMQA4P7eYY0
 
 #### Requirements:
 1. Tensorflow Object Detection API (https://github.com/tensorflow/models/tree/master/research/object_detection)
