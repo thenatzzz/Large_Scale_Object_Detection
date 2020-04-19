@@ -13,6 +13,7 @@
 4. COCO API (for evaluation metric and all of our models used are pre-trained on COCO Dataset)
 5. Google Cloud Platform for training models and evaluating results with new images (you can use Compute Engineer VM or Google Deeplearning VM)
 6. Some other basic library for Data Science like scikin-learn, pandas, numpy, matplotlib, ..
+
 **the Main code is in Tensorflow Object Detection API**
 
 #### Models:
