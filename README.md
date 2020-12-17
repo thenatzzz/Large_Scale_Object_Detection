@@ -1,8 +1,9 @@
-# 733-Object Detection on Xray images
-## CMPT-733 Programming for Big Data 2 (Simon Fraser University)
-### Group members:Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
+# Object Detection in X-ray Images for a Large-scale Security Inspection
 
-#### Object Detection in X-Ray Images
+### CMPT-733 Programming for Big Data 2 (Simon Fraser University)
+### Group members: Nattapat Juthaprachakul, Rui Wang, Siyu Wu, Yihan Lan
+
+#### Goals:
 * The goal of this project is to use multiple algorithms, train multiple models, and report on comparative performance of each one. Performance of the models is described by mean average precision scores(Object Detection metrics), also including accuracy and recall scores.
 * The program is written in Python.
 
